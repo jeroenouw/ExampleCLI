@@ -3,7 +3,7 @@
   "description": "An example CLI for ordering pizza's",
   "license": "MIT",
   "author": "Jeroen Ouwehand",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./lib/index.js",
   "bin": {
     "pizza": "./lib/index.js"
