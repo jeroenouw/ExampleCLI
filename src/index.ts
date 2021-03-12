@@ -30,9 +30,9 @@ if (options.peppers) console.log('  - peppers');
 if (options.pineapple) console.log('  - pineapple');
 if (options.bbq) console.log('  - bbq');
 
-const cheese = (options.cheese === undefined) ?
-	'marble' :
-	(!options.cheese ? 'no' : options.cheese);
+const cheese: string = undefined === options.cheese
+    ? 'marble'
+    : (!options.cheese ? 'no' : options.cheese);
 
 console.log('  - %s cheese', cheese);
 
