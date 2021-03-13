@@ -1,38 +1,45 @@
 {
   "name": "pizza-cli",
-  "version": "0.0.1",
   "description": "An example CLI for ordering pizza's",
-  "main": "./lib/index.js",
-  "scripts": {
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-    "create": "npm run build && npm run test",
-    "build": "tsc -p .",
-    "test": "sudo npm i -g && pizza",
-    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
-  },
-  "keywords": [
-    "cli",
-    "pizza",
-    "typescript",
-    "nodejs"
-  ],
-  "author": "Jeroen Ouwehand",
   "license": "MIT",
+  "author": "Jeroen Ouwehand",
+  "version": "0.0.2",
+  "main": "./lib/index.js",
   "bin": {
     "pizza": "./lib/index.js"
   },
+  "scripts": {
+    "audit": "lerna run audit --stream",
+    "audit:depcheck": "lerna run audit:depcheck --stream",
+    "audit:npm-check-updates": "npx npm-check-updates --errorLevel 1",
+    "build": "tsc -p .",
+    "create": "npm run build && npm run test",
+    "local": "sudo npm uninstall -g && sudo npm install -g && pizza",
+    "npm:format": "npx prettier-package-json --write package.json",
+    "npm:upgrade": "npx npm-check-updates -iu",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "sudo npm i -g && pizza"
+  },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^4.1.0",
     "clear": "^0.1.0",
-    "commander": "^2.19.0",
-    "figlet": "^1.2.1",
+    "commander": "^7.1.0",
+    "figlet": "^1.5.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@types/node": "^10.12.10",
-    "nodemon": "^1.18.7",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
-  }
+    "@types/node": "^14.14.33",
+    "depcheck": "^1.4.0",
+    "lerna": "^4.0.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "keywords": [
+    "cli",
+    "nodejs",
+    "pizza",
+    "typescript"
+  ]
 }
