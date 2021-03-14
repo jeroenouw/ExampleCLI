@@ -14,7 +14,7 @@ console.log(
 );
 
 program
-  .version('0.0.2')
+  .version('0.0.3')
   .description("An example CLI for ordering pizza's")
   .option('-p, --peppers', 'Add peppers')
   .option('-P, --pineapple', 'Add pineapple')
@@ -32,7 +32,7 @@ if (options.bbq) console.log('  - bbq');
 
 const cheese: string = undefined === options.cheese
     ? 'marble'
-    : (!options.cheese ? 'no' : options.cheese);
+    : options.cheese || 'no';
 
 console.log('  - %s cheese', cheese);
 
